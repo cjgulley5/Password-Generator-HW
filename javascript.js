@@ -1,3 +1,6 @@
+var generateBtn = document.querySelector("#generate");
+
+
 function writePassword() {
     answer = prompt("What is the length of your password?");
     if (answer < 8) {
