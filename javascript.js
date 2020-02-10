@@ -1,10 +1,3 @@
-prompt("What is the length of your password?");
-confirm("Do you want lowercase characters");
-confirm("Do you want uppercase characters");
-confirm("Do you want numeric characters");
-confirm("Do you want special characters");
-alert("Then click Generate Password");
-
 function writePassword() {
     answer = prompt("What is the length of your password?");
     if (answer < 8) {
