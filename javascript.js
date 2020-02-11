@@ -1,3 +1,4 @@
+var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
     answer = prompt("How many characters would you like your password to be? Must contain at least 8 and no longer than 128.");
