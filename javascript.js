@@ -17,7 +17,7 @@ function writePassword() {
         var number = confirm("Would you like numeric characters?");
         var specChar = confirm("Would you like special characters?");
 
-
+        // Different if and else if variations for the multiple criteria to make a password.
      if (lower === true && upper === true && number === true && specChar === true) {
         var password = generatePassword();
       }
@@ -54,14 +54,11 @@ function writePassword() {
       else if (lower === false && upper === false && number === true && specChar === true) {
         var password = generatePassword12();
       }
+      else {
+        alert("Please select proper criteria for Password");
+        writePassword();
+      }
 
-
-
-
-        else {
-            alert("Please select proper criteria for Password");
-            writePassword();
-          }
 
 
 
@@ -73,7 +70,7 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
-
+// multiple function variations for password criteria to match the else if.
 function generatePassword() {
     length = answer,
     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*",
