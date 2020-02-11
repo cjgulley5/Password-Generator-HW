@@ -30,12 +30,31 @@ function writePassword() {
       else if (lower === true && upper === false && number === false && specChar === false) {
         var password = generatePassword4();
       }
-      else if (lower === false && upper === true && number === false && specChar === flase) {
+      else if (lower === false && upper === true && number === false && specChar === false) {
           var password = generatePassword5();
       }
-      else if (lower === false && upper === false && number === true && specChar === flase) {
+      else if (lower === false && upper === false && number === true && specChar === false) {
         var password = generatePassword6();
-    }
+      }
+      else if (lower === false && upper === false && number === false && specChar === true) {
+        var password = generatePassword7();
+      }
+      else if (lower === true && upper === false && number === true && specChar === false) {
+        var password = generatePassword8();
+      }
+      else if (lower === true && upper === false && number === false && specChar === true) {
+        var password = generatePassword9();
+      }
+      else if (lower === false && upper === true && number === true && specChar === false) {
+        var password = generatePassword10();
+      }
+      else if (lower === false && upper === true && number === false && specChar === true) {
+        var password = generatePassword11();
+      }
+      else if (lower === false && upper === false && number === true && specChar === true) {
+        var password = generatePassword12();
+      }
+
 
 
 
@@ -103,6 +122,60 @@ function generatePassword5() {
 function generatePassword6() {
     length = answer,
     charset = "0123456789",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword7() {
+    length = answer,
+    charset = "!@#$%^&*",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword8() {
+    length = answer,
+    charset = "abcdefghijklmnopqrstuvwxyz0123456789",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword9() {
+    length = answer,
+    charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&*",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword10() {
+    length = answer,
+    charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword11() {
+    length = answer,
+    charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword12() {
+    length = answer,
+    charset = "0123456789!@#$%^&*",
     retVal = "";
   for (i = 0, n = charset.length; i < length; ++i) {
     retVal += charset.charAt(Math.floor(Math.random() * n));
