@@ -1,20 +1,51 @@
 var generateBtn = document.querySelector("#generate");
 
+generateBtn.addEventListener("click", writePassword);
+
 
 function writePassword() {
-    answer = prompt("What is the length of your password?");
+    answer = prompt("How many characters would you like your password to be? Must contain at least 8 and no longer than 128.");
     if (answer < 8) {
-      alert("Password too short, try again");
-      writePassword()
+      alert("Password too short, please try again");
+      writePassword();
     } else if (answer > 128) {
-      alert("Password is too long, try again");
-      writePassword()
+      alert("Password is too long, please try again");
+      writePassword();
     } else {
-     lcConfirm = confirm("Do you want to use lowercase characters");
-     upConfirm = confirm("Do you want to use uppercase characters");
-     numConfirm = confirm("Do you want to use numeric characters");
-     spConfirm = confirm("Do you want to use special characters");
-    
+        var lower = confirm("Would you like lowercase characters?");
+        var upper = confirm("Would you like uppercase characters?");
+        var number = confirm("Would you like numeric characters?");
+        var specChar = confirm("Would you like special characters?");
+
+
+     if (lower === true && upper === true && number === true && specChar === true) {
+        var password = generatePassword();
+      }
+      else if (lower === true && upper === true && number === true && specChar === false) {
+        var password = generatePassword2();
+      }
+      else if (lower ===  true && upper === true && number === false && specChar === false) {
+        var password = generatePassword3();
+      }
+      else if (lower === true && upper === false && number === false && specChar === false) {
+        var password = generatePassword4();
+      }
+      else if (lower === false && upper === true && number === false && specChar === flase) {
+          var password = generatePassword5();
+      }
+      else if (lower === false && upper === false && number === true && specChar === flase) {
+        var password = generatePassword6();
+    }
+
+
+
+        else {
+            alert("Please select proper criteria for Password");
+            writePassword();
+          }
+
+
+
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
@@ -23,12 +54,58 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
+
 function generatePassword() {
-  var length = answer,
+    length = answer,
     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*",
     retVal = "";
   for (i = 0, n = charset.length; i < length; ++i) {
   retVal += charset.charAt(Math.floor(Math.random() * n));
   }
   return retVal;
+}
+function generatePassword2() {
+    length = answer,
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword3() {
+    length = answer,
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword4() {
+    length = answer,
+    charset = "abcdefghijklmnopqrstuvwxyz",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword5() {
+    length = answer,
+    charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generatePassword6() {
+    length = answer,
+    charset = "0123456789",
+    retVal = "";
+  for (i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
 }
