@@ -175,4 +175,7 @@ function generatePassword12() {
     retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
+
 }
+
+generateBtn.addEventListener("click", writePassword);
